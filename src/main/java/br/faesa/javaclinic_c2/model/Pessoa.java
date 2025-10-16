@@ -55,19 +55,6 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    // Método que atualiza os dados da pessoa (nome, telefone e endereço)
-    public void atualizar(String nome, String telefone, String endereco) {
-        if (!nome.isEmpty()) {
-            this.setNome(nome);
-        }
-        if (!telefone.isEmpty()) {
-            this.setTelefone(telefone);
-        }
-        if (!endereco.isEmpty()) {
-            this.setEndereco(endereco);
-        }
-    }
-
     // Método toString que gera uma representação textual da pessoa
     @Override
     public String toString() {
