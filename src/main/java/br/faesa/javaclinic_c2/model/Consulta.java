@@ -18,22 +18,9 @@ public class Consulta {
         this.data = data;
     }
 
-    // Construtor sem argumentos, útil para a criação de instâncias sem dados iniciais
-    public Consulta() {
-        this.id = 0;
-        this.crmMedico = "";
-        this.cpfPaciente = "";
-        this.especialidade = null;
-        this.data = null;
-    }
-
     // Métodos getters e setters
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getCrmMedico() {

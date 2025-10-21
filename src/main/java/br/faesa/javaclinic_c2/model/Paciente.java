@@ -9,12 +9,6 @@ public class Paciente extends Pessoa{
         this.cpf = cpf;
     }
 
-    // Construtor sem argumentos, útil para a criação de instâncias sem dados iniciais
-    public Paciente() {
-        super("", "", "", "");
-        this.cpf = "";
-    }
-
     // Métodos getters e setters
     public String getCpf() {
         return cpf;

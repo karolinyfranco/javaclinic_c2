@@ -6,7 +6,6 @@ public enum Especialidade {
     CARDIOLOGIA,
     GINECOLOGIA,
     DERMATOLOGIA,
-    PSIQUIATRIA,
     OFTALMOLOGIA;
 
     // Método estático para converter uma String para o valor correspondente do enum

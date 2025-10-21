@@ -14,14 +14,6 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    // Construtor sem argumentos, útil para a criação de instâncias sem dados iniciais
-    public Pessoa() {
-        this.nome = "";
-        this.email = "";
-        this.endereco = "";
-        this.telefone = "";
-    }
-
     // Métodos getters e setters
     public String getNome() {
         return nome;

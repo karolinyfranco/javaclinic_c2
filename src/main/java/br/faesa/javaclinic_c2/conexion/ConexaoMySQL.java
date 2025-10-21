@@ -11,7 +11,6 @@ public class ConexaoMySQL {
     public void connect() {
         try {
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conexão realizada com sucesso!");
         } catch (SQLException e) {
             System.out.println("Erro na conexão: " + e.getMessage());
         }

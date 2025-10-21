@@ -37,30 +37,19 @@ public class ControllerMedico {
         }
     }
 
-    public void atualizar(Medico medico) {
-        String sql = "UPDATE medico SET nome=?, email=?, especialidade=?, telefone=?, endereco=? WHERE crm=?";
-
+    public void atualizar(String crm, String campo, String novoValor) {
+        String sql = "UPDATE medico SET " + campo + " = ? WHERE crm = ?";
         try {
             conexao.connect();
-
-            // Verifica se existe antes de atualizar
-            if (!validator.existeMedico(conexao, medico.getCrm())) {
-                System.out.println("Médico com CRM " + medico.getCrm() + " não encontrado.");
+            if (!validator.existeMedico(conexao, crm)) {
+                System.out.println("Médico com CRM " + crm + " não encontrado.");
                 return;
             }
-
-            PreparedStatement stmt = conexao.getConn().prepareStatement(sql);
-
-            stmt.setString(1, medico.getNome());
-            stmt.setString(2, medico.getEmail());
-            stmt.setString(3, medico.getEspecialidade().name());
-            stmt.setString(4, medico.getTelefone());
-            stmt.setString(5, medico.getEndereco());
-            stmt.setString(6, medico.getCrm());
-            stmt.executeUpdate();
-
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setString(1, novoValor);
+            ps.setString(2, crm);
+            ps.executeUpdate();
             System.out.println("Médico atualizado com sucesso!");
-
         } catch (SQLException e) {
             System.out.println("Erro ao atualizar médico: " + e.getMessage());
         } finally {
@@ -118,5 +107,21 @@ public class ControllerMedico {
             conexao.close();
         }
         return medicos;
+    }
+
+    public boolean medicoTemConsulta(String crm) {
+        String sql = "SELECT COUNT(*) FROM consulta WHERE crm_medico = ?";
+        try {
+            conexao.connect();
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setString(1, crm);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) return true;
+        } catch (SQLException e) {
+            System.out.println("Erro ao verificar FKs: " + e.getMessage());
+        } finally {
+            conexao.close();
+        }
+        return false;
     }
 }

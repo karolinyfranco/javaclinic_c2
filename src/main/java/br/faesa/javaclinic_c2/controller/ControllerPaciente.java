@@ -35,29 +35,19 @@ public class ControllerPaciente {
         }
     }
 
-    public void atualizar(Paciente paciente) {
-        String sql = "UPDATE paciente SET nome=?, email=?, telefone=?, endereco=? WHERE cpf=?";
-
+    public void atualizar(String cpf, String campo, String novoValor) {
+        String sql = "UPDATE paciente SET " + campo + " = ? WHERE cpf = ?";
         try {
             conexao.connect();
-
-            // Verifica se existe antes de atualizar
-            if (!validator.existePaciente(conexao, paciente.getCpf())) {
-                System.out.println("Paciente com CPF " + paciente.getCpf() + " não encontrado.");
+            if (!validator.existePaciente(conexao, cpf)) {
+                System.out.println("Paciente com CPF " + cpf + " não encontrado.");
                 return;
             }
-
-            PreparedStatement stmt = conexao.getConn().prepareStatement(sql);
-
-            stmt.setString(1, paciente.getNome());
-            stmt.setString(2, paciente.getEmail());
-            stmt.setString(3, paciente.getTelefone());
-            stmt.setString(4, paciente.getEndereco());
-            stmt.setString(5, paciente.getCpf());
-            stmt.executeUpdate();
-
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setString(1, novoValor);
+            ps.setString(2, cpf);
+            ps.executeUpdate();
             System.out.println("Paciente atualizado com sucesso!");
-
         } catch (SQLException e) {
             System.out.println("Erro ao atualizar paciente: " + e.getMessage());
         } finally {
@@ -116,29 +106,19 @@ public class ControllerPaciente {
         return pacientes;
     }
 
-    public void listarConsultasDoPaciente(String cpfPaciente) {
+    public boolean pacienteTemConsulta(String cpf) {
+        String sql = "SELECT COUNT(*) FROM consulta WHERE cpf_paciente = ?";
         try {
             conexao.connect();
-
-            // Verifica se o paciente existe
-            String checkSql = "SELECT 1 FROM paciente WHERE cpf = ?";
-            PreparedStatement checkStmt = conexao.getConn().prepareStatement(checkSql);
-            checkStmt.setString(1, cpfPaciente);
-            ResultSet rs = checkStmt.executeQuery();
-
-            if (!rs.next()) {
-                System.out.println("Paciente com CPF " + cpfPaciente + " não encontrado.");
-                return;
-            }
-
-            // Se o paciente existe, lista as consultas
-            ControllerConsulta ctrlConsulta = new ControllerConsulta();
-            ctrlConsulta.listarPorPaciente(cpfPaciente);
-
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setString(1, cpf);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) return true;
         } catch (SQLException e) {
-            System.out.println("Erro ao buscar consultas do paciente: " + e.getMessage());
+            System.out.println("Erro ao verificar FKs: " + e.getMessage());
         } finally {
             conexao.close();
         }
+        return false;
     }
 }

@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f322cc39-b208-4120-b1df-451b9b3378dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/ValidatorUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerConsulta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/conexion/ConexaoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/conexion/ConexaoMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerMedico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/model/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/model/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/model/Especialidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/model/Especialidade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/principal/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/principal/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/MenuUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/reports/Relatorios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/reports/Relatorios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/MenuUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/MenuUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/SplashScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

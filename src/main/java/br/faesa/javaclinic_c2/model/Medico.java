@@ -11,13 +11,6 @@ public class Medico extends Pessoa{
         this.especialidade = especialidade;
     }
 
-    // Construtor sem argumentos, útil para a criação de instâncias sem dados iniciais
-    public Medico() {
-        super("", "", "", "");
-        this.crm = "";
-        this.especialidade = null;
-    }
-
     // Métodos getters e setters
     public String getCrm() {
         return crm;

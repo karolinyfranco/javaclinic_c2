@@ -96,42 +96,4 @@ public class ControllerConsulta {
         }
         return consultas;
     }
-
-    public List<Consulta> listarPorPaciente(String cpfPaciente) {
-        String sql = "SELECT * FROM consulta WHERE cpf_paciente = ?";
-
-        try {
-            conexao.connect();
-
-            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
-            ps.setString(1, cpfPaciente);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                Consulta c = new Consulta(
-                        rs.getLong("id_consulta"),
-                        rs.getString("crm_medico"),
-                        rs.getString("cpf_paciente"),
-                        Especialidade.valueOf(rs.getString("especialidade")),
-                        rs.getTimestamp("data").toLocalDateTime()
-                );
-                consultas.add(c);
-            }
-
-            if (consultas.isEmpty()) {
-                System.out.println("Nenhuma consulta encontrada para o paciente com CPF " + cpfPaciente + ".");
-            } else {
-                System.out.println("Consultas do paciente " + cpfPaciente + ":");
-                for (Consulta c : consultas) {
-                    System.out.println(c);
-                }
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao listar consultas do paciente: " + e.getMessage());
-        } finally {
-            conexao.close();
-        }
-        return consultas;
-    }
 }
