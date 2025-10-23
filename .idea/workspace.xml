@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f322cc39-b208-4120-b1df-451b9b3378dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/diagrams/DIAGRAMA_RELACIONAL.architect" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diagrams/DIAGRAMA_RELACIONAL.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/conexion/ConexaoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/conexion/ConexaoMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/controller/ControllerPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/model/Especialidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/model/Especialidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/principal/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/principal/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/reports/Relatorios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/reports/Relatorios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/MenuUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/MenuUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_c2/utils/SplashScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/create_tables_javaclinic.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/create_tables_javaclinic.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +55,7 @@
       <recent name="C:\Users\luana\Projects_Faesa\javaclinic_c2\docker\init" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luana\Projects_Faesa\javaclinic_c2\diagrams" />
       <recent name="C:\Users\luana\Projects_Faesa\javaclinic_c2" />
     </key>
   </component>

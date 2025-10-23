@@ -9,6 +9,11 @@ O objetivo do projeto é simular um sistema de clínica médica, permitindo o ca
 Este projeto foi desenvolvido como parte da disciplina de Banco de Dados, com Java + MySQL utilizando Docker e Maven.
 
 
+## Vídeo do Funcionamento do Projeto
+
+Link para o vídeo no Youtube: https://www.youtube.com/watch?v=JMOZdZ2vIoI
+
+
 ## Funcionalidades
 
 - Cadastro, atualização, listagem e exclusão de Médicos
@@ -39,7 +44,7 @@ javaclinic_c2/
 │        ├── utils/              # Utilitários gerais
 │        └── principal/          # Ponto de entrada da aplicação
 │
-├── diagrams/                    # Diagramas relacionais do projeto
+├── diagrams/                    # Diagrama relacional do projeto
 │
 ├── sql/                         # Scripts SQL de criação e inserção de dados  
 │   ├── create_tables_javaclinic.sql
@@ -52,13 +57,30 @@ javaclinic_c2/
 └── README.md
 ```
 
-## Configurando o Banco de Dados com Docker
+## Executando o Projeto em Linux
 
 O projeto já inclui um arquivo docker-compose.yml para subir o ambiente completo do banco de dados.
 
-### 1️⃣ Subir o ambiente
+### 1️⃣ Pré-requisitos
 
-No terminal, dentro da pasta do projeto:
+Verifique se você tem tudo instalado (e funcionando):
+
+```bash
+  java -version             # deve mostrar "openjdk 21" ou superior
+  mvn -version              # deve mostrar a versão do Maven
+  docker --version          # deve mostrar a versão do Docker
+```
+
+Se algum comando não for reconhecido, instale antes de continuar:
+
+```bash
+  sudo apt update
+  sudo apt install openjdk-21-jdk maven docker.io -y
+```
+
+### 2️⃣ Subir o ambiente
+
+No terminal, dentro da pasta raiz do projeto:
 
 ```bash
   docker compose up -d
@@ -67,22 +89,42 @@ Isso criará:
 - Um container MySQL (porta 3307)
 - Um container phpMyAdmin (porta 8080)
 
-### 2️⃣ Acessar o phpMyAdmin
+### 3️⃣ Acessar o phpMyAdmin
 
 Abra no navegador: http://localhost:8080
 
-### 3️⃣ Scripts SQL
+### 4️⃣ Scripts SQL
+
 Os scripts estão em /sql e são automaticamente executados na primeira vez que o container é criado:
 
 - create_tables_javaclinic.sql — Criação do banco e tabelas
 - insert_samples_records.sql — Dados iniciais de médicos e pacientes
 - insert_samples_related_records.sql — Inserção de consultas
 
+### ️5️⃣ Compilar o Projeto
 
-Se precisar recriar o banco do zero:
+Ainda na pasta raiz do projeto (onde está o pom.xml), rode:
+
 ```bash
-docker compose down -v
-docker compose up -d
+  mvn clean compile
+```
+
+Isso baixa as dependências (MySQL Connector/J) e compila o código-fonte.
+
+### 6️⃣ Executar a classe Principal
+
+Para executar a classe Principal e iniciar a aplicação, rode:
+
+```bash
+  mvn exec:java -Dexec.mainClass="br.faesa.javaclinic_c2.principal.Principal"
+```
+
+### 7️⃣ Parar o banco e limpar tudo
+
+Depois que terminar de testar:
+
+```bash
+  docker compose down
 ```
 
 
